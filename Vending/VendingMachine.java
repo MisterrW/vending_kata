@@ -22,5 +22,13 @@ public class VendingMachine {
     return this.totalMoney;
    }
 
+   public void insert(Coin coin) {
+    insertedCoins.add(coin);
+   }
+
+   public ArrayList<Coin> checkInsertedCoins() {
+    return this.insertedCoins;
+   }
+
   }
 
