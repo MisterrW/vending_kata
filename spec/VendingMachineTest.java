@@ -21,4 +21,12 @@ public class VendingMachineTest {
     vending.insert(coin);
     assertEquals(vending.checkInsertedCoins().get(0).getCoinName(), "Dime");
   }
+
+  @Test
+  public void testDimeWorth5Cents() {
+    Coin coin = new Coin("Dime");
+    vending.insert(coin);
+    vending.evaluateCoins();
+    assertEquals(vending.getTotalMoney(), 0.05, 0.01);
+  }
 }

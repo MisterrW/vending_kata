@@ -3,7 +3,7 @@ import java.util.*;
 
 public class VendingMachine {
   private double totalMoney;
-  private ArrayList<Coin> totalCoins;
+  // private ArrayList<Coin> totalCoins;
   private ArrayList<Coin> insertedCoins;
   private ArrayList<Item> stockA;
   private ArrayList<Item> stockB;
@@ -14,7 +14,7 @@ public class VendingMachine {
     this.stockB = new ArrayList<Item>();
     this.stockC = new ArrayList<Item>();
     this.totalMoney = 0.00;
-    this.totalCoins = new ArrayList<Coin>();
+    // this.totalCoins = new ArrayList<Coin>();
     this.insertedCoins = new ArrayList<Coin>();
    }
 
@@ -28,6 +28,13 @@ public class VendingMachine {
 
    public ArrayList<Coin> checkInsertedCoins() {
     return this.insertedCoins;
+   }
+
+   public void evaluateCoins() {
+    for(Coin coin : insertedCoins)
+      if (coin.getCoinName() == "Dime"){
+        this.totalMoney += 0.05;
+      }
    }
 
   }
